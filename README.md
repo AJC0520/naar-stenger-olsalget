@@ -1,12 +1,24 @@
-# React + Vite
+# Ølsalg Status App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React project that checks whether beer sales are currently open in Norway. It considers the current day, time, and public holidays using data from [webapi.no](https://webapi.no).
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Displays whether beer sales are open or closed
+- Fetches Norwegian holidays automatically
+- Live countdown until beer sale closing time
+- Handles the following rules:
+  - Sundays: always closed
+  - Saturdays: closes at 18:00
+  - Weekdays (Mon–Fri): closes at 20:00
+  - Public holidays: closed
 
-## Expanding the ESLint configuration
+## How It Works
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- On component load, it checks today's date and time.
+- It fetches public holidays from the `webapi.no` API.
+- If it's a Sunday or a public holiday, beer sales are marked as closed.
+- If open, it displays a live countdown to closing time.
+- Updates every second using `setInterval`.
+
+
