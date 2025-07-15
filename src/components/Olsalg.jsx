@@ -10,7 +10,7 @@ export default function Olsalg() {
     async function checkBeerStatus() {
       const now = new Date();
       const todayISO = now.toISOString().split("T")[0];
-      const day = now.getDay(); // 0 = Sunday, 6 = Saturday
+      const day = now.getDay();
       const year = now.getFullYear();
 
       try {
@@ -28,7 +28,7 @@ export default function Olsalg() {
           return;
         }
 
-        // Set closing time
+      
         let closingHour = day === 6 ? 18 : 20;
         const closingTime = new Date(now);
         closingTime.setHours(closingHour, 0, 0, 0);
@@ -39,7 +39,6 @@ export default function Olsalg() {
           return;
         }
 
-        // Update time left every second
         intervalId = setInterval(() => {
           const now = new Date();
           const timeDiff = closingTime - now;
