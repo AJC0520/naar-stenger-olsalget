@@ -34,7 +34,7 @@ export default function Olsalg() {
         closingTime.setHours(closingHour, 0, 0, 0);
 
         if (now >= closingTime) {
-          setStatus(`❌ Ølsalget er STENGT (etter kl. ${closingHour}:00)`);
+          setStatus("❌ Ølsalget er STENGT");
           setTimeleft("");
           return;
         }
