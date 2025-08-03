@@ -74,7 +74,7 @@ export default function Olsalg() {
     <>
       <p className="feedback-status">{status}</p>
       <p className="timeleft-status">{timeleft}</p>
-      <form name="contact" method="POST" data-netlify="true">
+      <form name="contact" netlify>
   
 
         <p>
