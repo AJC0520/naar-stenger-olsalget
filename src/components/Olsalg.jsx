@@ -73,6 +73,11 @@ export default function Olsalg() {
     <>
       <p className="feedback-status">{status}</p>
       <p className="timeleft-status">{timeleft}</p>
+      <form name="test" netlify>
+        <input type="text" name="name" />
+        <input type="text" name="email" />
+        <button type="submit">Send</button>
+      </form>
     </>
   );
 }
