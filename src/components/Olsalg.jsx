@@ -74,17 +74,27 @@ export default function Olsalg() {
     <>
       <p className="feedback-status">{status}</p>
       <p className="timeleft-status">{timeleft}</p>
-      <form name="contact" netlify>
+      <form
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+      >
         <input type="hidden" name="form-name" value="contact" />
+        <p style={{ display: "none" }}>
+          <label>
+            Don’t fill this out if you’re human: <input name="bot-field" />
+          </label>
+        </p>
 
         <p>
           <label>
-            Your Name: <input type="text" name="name" />
+            Your Name: <input type="text" name="name" required />
           </label>
         </p>
         <p>
           <label>
-            Your Email: <input type="email" name="email" />
+            Your Email: <input type="email" name="email" required />
           </label>
         </p>
 
