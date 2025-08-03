@@ -14,7 +14,9 @@ export default function Olsalg() {
       const year = now.getFullYear();
 
       try {
-        const response = await fetch(`https://webapi.no/api/v1/holidays/${year}`);
+        const response = await fetch(
+          `https://webapi.no/api/v1/holidays/${year}`
+        );
         const data = await response.json();
         const holidays = data.data;
 
@@ -28,7 +30,6 @@ export default function Olsalg() {
           return;
         }
 
-      
         let closingHour = day === 6 ? 18 : 20;
         const closingTime = new Date(now);
         closingTime.setHours(closingHour, 0, 0, 0);
@@ -73,10 +74,34 @@ export default function Olsalg() {
     <>
       <p className="feedback-status">{status}</p>
       <p className="timeleft-status">{timeleft}</p>
-      <form name="test" netlify>
-        <input type="text" name="name" />
-        <input type="text" name="email" />
-        <button type="submit">Send</button>
+      <form name="contact" method="POST" data-netlify="true">
+        <p>
+          <label>
+            Your Name: <input type="text" name="name" />
+          </label>
+        </p>
+        <p>
+          <label>
+            Your Email: <input type="email" name="email" />
+          </label>
+        </p>
+        <p>
+          <label>
+            Your Role:{" "}
+            <select name="role[]" multiple>
+              <option value="leader">Leader</option>
+              <option value="follower">Follower</option>
+            </select>
+          </label>
+        </p>
+        <p>
+          <label>
+            Message: <textarea name="message"></textarea>
+          </label>
+        </p>
+        <p>
+          <button type="submit">Send</button>
+        </p>
       </form>
     </>
   );
