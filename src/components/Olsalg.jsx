@@ -97,6 +97,11 @@ export default function Olsalg() {
             Your Email: <input type="email" name="email" required />
           </label>
         </p>
+        <p>
+          <label>
+            Your Message: <textarea name="message" required></textarea>
+          </label>
+        </p>
 
         <p>
           <button type="submit">Send</button>
