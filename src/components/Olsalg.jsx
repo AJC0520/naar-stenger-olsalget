@@ -24,13 +24,20 @@ export default function Olsalg() {
           holiday.date.startsWith(todayISO)
         );
 
+        const tomorrow = new Date(now);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        const tomorrowISO = tomorrow.toISOString().split("T")[0];
+        const isHolidayTomorrow = holidays.some((holiday) =>
+          holiday.date.startsWith(tomorrowISO)
+        );
+
         if (isHolidayToday || day === 0) {
           setStatus("❌ Ølsalget er stengt i dag)");
           setTimeleft("");
           return;
         }
 
-        let closingHour = day === 6 ? 18 : 20;
+        let closingHour = (day === 6 || isHolidayTomorrow) ? 18 : 20;
         const closingTime = new Date(now);
         closingTime.setHours(closingHour, 0, 0, 0);
 
@@ -74,39 +81,6 @@ export default function Olsalg() {
     <>
       <p className="feedback-status">{status}</p>
       <p className="timeleft-status">{timeleft}</p>
-      <form
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-      >
-        <input type="hidden" name="form-name" value="contact" />
-        <p style={{ display: "none" }}>
-          <label>
-            Don’t fill this out if you’re human: <input name="bot-field" />
-          </label>
-        </p>
-
-        <p>
-          <label>
-            Your Name: <input type="text" name="name" required />
-          </label>
-        </p>
-        <p>
-          <label>
-            Your Email: <input type="email" name="email" required />
-          </label>
-        </p>
-        <p>
-          <label>
-            Your Message: <textarea name="message" required></textarea>
-          </label>
-        </p>
-
-        <p>
-          <button type="submit">Send</button>
-        </p>
-      </form>
     </>
   );
 }
