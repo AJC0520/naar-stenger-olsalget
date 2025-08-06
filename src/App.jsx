@@ -1,5 +1,7 @@
 import Footer from "./components/Footer";
 import Olsalg from "./components/Olsalg";
+import CookieConsent from "./components/CookieConsent";
+
 function App() {
   return (
     <div className="main-content">
@@ -8,6 +10,7 @@ function App() {
         <Olsalg />
       </div>
       <Footer />
+      <CookieConsent />
     </div>
   );
 }
