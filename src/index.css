@@ -10,23 +10,23 @@ html, body, #root {
 }
 
 .main-content {
-  min-height: 100vh;             /* Full høyde */
+  min-height: 100vh;             
   display: flex;
   flex-direction: column;
 }
 
 .main-content > .content-wrapper {
-  flex: 1;                      /* Tar opp all tilgjengelig plass */
+  flex: 1;                      
   display: flex;
-  justify-content: center;      /* Horisontal sentrering */
-  align-items: center;          /* Vertikal sentrering */
+  justify-content: center;     
+  align-items: center;          
   flex-direction: column;
-  text-align: center;           /* Hvis du vil ha teksten sentrert */
+  text-align: center;          
 }
 
-/* Footer ligger under, og blir liggende nederst */
+
 .main-content > footer {
-  flex-shrink: 0;               /* Footer krymper ikke */
+  flex-shrink: 0;               
 }
 
 
@@ -197,7 +197,7 @@ footer {
   transform: translateY(-1px);
 }
 
-/* Mobile responsiveness */
+
 @media (max-width: 768px) {
   .cookie-content {
     flex-direction: column;
@@ -212,5 +212,43 @@ footer {
   .cookie-btn {
     flex: 1;
     max-width: 120px;
+  }
+
+  
+  .main-title {
+    font-size: 24px;
+    padding: 0 20px;
+  }
+
+  .feedback-status {
+    font-size: 24px;
+    padding: 0 20px;
+  }
+
+  .timeleft-status {
+    font-size: 18px;
+    padding: 0 20px;
+  }
+
+  .postal-main-container {
+    width: 90%;
+    margin: 0 20px;
+    padding: 20px;
+  }
+
+  .postal-caption {
+    font-size: 18px;
+  }
+
+  
+  .input-container > button {
+    min-height: 44px;
+    font-size: 16px;
+  }
+
+  .input-field {
+    height: 44px;
+    font-size: 16px;
+    padding: 8px;
   }
 }
