@@ -198,6 +198,44 @@ footer {
 }
 
 
+/* --- Beer Bubbles Animation --- */
+.beer-bubbles-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.beer-bubble {
+  position: absolute;
+  bottom: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.7);
+  box-shadow: 0 0 8px 2px rgba(255,255,255,0.3);
+  animation: bubbleUp linear forwards;
+}
+
+@keyframes bubbleUp {
+  0% {
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+  80% {
+    filter: blur(1px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1.1);
+    opacity: 0.1;
+    filter: blur(2px);
+  }
+}
+/* --- End Beer Bubbles Animation --- */
+
+
 @media (max-width: 768px) {
   .cookie-content {
     flex-direction: column;
