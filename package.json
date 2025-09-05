@@ -1,8 +1,16 @@
 {
-  "name": "olsalg",
+  "name": "naar-stenger-olsalget",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "description": "En nettapplikasjon som viser når ølsalget stenger i Norge basert på åpningstider og helligdager",
+  "keywords": ["ølsalg", "åpningstider", "norge", "øl", "butikk", "helligdager", "react", "vite"],
+  "author": "Når stenger ølsalget",
+  "homepage": "https://xn--nrstengerlsalget-dob46a.no/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AJC0520/naar-stenger-olsalget.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",

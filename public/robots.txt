@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://xn--nrstengerlsalget-dob46a.no/sitemap.xml
+
+# Crawl delay for respectful crawling
+Crawl-delay: 1
+
+# Allow crawling of assets
+Allow: /src/assets/
+Allow: /src/index.css
+
+# Block crawling of development files
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /dist/
+Disallow: /vite.config.js
+Disallow: /eslint.config.js
+Disallow: /package.json
+Disallow: /package-lock.json

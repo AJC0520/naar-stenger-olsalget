@@ -78,9 +78,18 @@ export default function Olsalg() {
   }, []);
 
   return (
-    <>
-      <p className="feedback-status">{status}</p>
-      <p className="timeleft-status">{timeleft}</p>
-    </>
+    <div className="olsalg-status" role="region" aria-live="polite" aria-label="Status for ølsalg">
+      <p className="feedback-status" aria-describedby="status-description">
+        {status}
+      </p>
+      {timeleft && (
+        <p className="timeleft-status" id="countdown-timer" aria-label="Nedtelling til stengetid">
+          {timeleft}
+        </p>
+      )}
+      <div id="status-description" className="sr-only">
+        Denne seksjonen viser om ølsalget er åpent eller stengt, og tid igjen til stenging hvis det er åpent.
+      </div>
+    </div>
   );
 }
