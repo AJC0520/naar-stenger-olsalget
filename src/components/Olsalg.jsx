@@ -32,7 +32,7 @@ export default function Olsalg() {
         );
 
         if (isHolidayToday || day === 0) {
-          setStatus("❌ Ølsalget er stengt i dag)");
+          setStatus("❌ Ølsalget er STENGT");
           setTimeleft("");
           return;
         }
@@ -52,7 +52,7 @@ export default function Olsalg() {
           const timeDiff = closingTime - now;
 
           if (timeDiff <= 0) {
-            setStatus("❌ Ølsalget er nå STENGT");
+            setStatus("❌ Ølsalget er STENGT");
             setTimeleft("");
             clearInterval(intervalId);
             return;
